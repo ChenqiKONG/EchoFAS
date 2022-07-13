@@ -4,7 +4,7 @@ Pytorch implementation of Beyond the Pixel World: A Novel Acoustic-based Face An
 ## Prerequisites:
 torch: 1.5.0
 
-torch: 0.6.0
+torchvision: 0.6.0
 
 numpy: 1.23.0
 
