@@ -6,7 +6,7 @@ The recorded data can be processed with our [preprocessing program](https://gith
 # How to run
 1. Clone the repository
 ```bash
-git clone https://github.com/
+git clone https://github.com/ChenqiKONG/EchoFAS
 ```
 2. Connect your Android device to the computer
 3. Open and build the project with Android Studio
