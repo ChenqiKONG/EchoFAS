@@ -109,13 +109,13 @@ public class DataCollectionActivity extends AppCompatActivity {
                             //  Create save directory
                             SimpleDateFormat formatter = new SimpleDateFormat("MM_dd_HH_mm_ss", Locale.US);
                             Date now = new Date();
-                            /** OPTION 1: SAVE AT DCIM FOLDER (required for Samsung note edge) **/
-                            saveFolder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),"EchoFAS");
-                            if (!saveFolder.exists())
-                                saveFolder.mkdirs();
-                            saveFolder = new File(saveFolder,formatter.format(now));
-                            /** OPTION 2: SAVE AT APPLICATION DIRECTORY (Can be viewed with device explore in Android Studio) **/
-                            //saveFolder = new File(getApplicationContext().getFilesDir().getAbsolutePath(), formatter.format(now));
+                            /** OPTION 1: SAVE AT APPLICATION DIRECTORY (Can be viewed with device explore in Android Studio) **/
+                            saveFolder = new File(getApplicationContext().getFilesDir().getAbsolutePath(), formatter.format(now));
+                            /** OPTION 2: SAVE AT DCIM FOLDER (required for Samsung note edge) **/
+                            //saveFolder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),"EchoFAS");
+                            //if (!saveFolder.exists())
+                            //    saveFolder.mkdirs();
+                            //saveFolder = new File(saveFolder,formatter.format(now));
 
                             if (!saveFolder.exists())
                                 saveFolder.mkdirs();
