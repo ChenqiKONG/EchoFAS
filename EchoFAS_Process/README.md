@@ -14,7 +14,7 @@ The code uses the following libraries
 # How to Run
 Clone the repository
 ```bash
-git clone https://github.com/
+git clone https://github.com/ChenqiKONG/EchoFAS.git
 cd EchoFAS/EchoFAS_Process
 ```
 1. Save the processed data in WAV format
