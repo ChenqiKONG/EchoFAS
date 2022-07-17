@@ -3,7 +3,7 @@
  
  The code will extract target face region echoes from the raw data.
  
- The input WAV file data can be collected with our data collection [Android APP](https://pip.pypa.io/en/stable/).
+ The input WAV file data can be collected with our data collection [Android APP](https://github.com/ChenqiKONG/EchoFAS/edit/main/EchoFAS_DataCollection/).
  
 # Libraries
 The code uses the following libraries
