@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">EchoFAS Data</string>
-    <string name="start_btn_txt">OPEN CAMERA</string>
-    <string name="record_btn">START RECORDING</string>
-    <string name="repeat_txt_str">Repeat Times</string>
-</resources>
