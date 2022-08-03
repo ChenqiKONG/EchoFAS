@@ -1,5 +1,5 @@
 # EchoFAS
-Pytorch implementation of Beyond the Pixel World: A Novel Acoustic-based Face Anti-Spoofing System for Smartphones
+Pytorch implementation of Beyond the Pixel World: A Novel Acoustic-based Face Anti-Spoofing System for Smartphones （）
 
 ## Prerequisites:
 torch: 1.5.0
