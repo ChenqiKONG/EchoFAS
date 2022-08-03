@@ -1,7 +1,12 @@
 # EchoFAS
 Pytorch implementation of "Beyond the Pixel World: A Novel Acoustic-based Face Anti-Spoofing System for Smartphones". (TIFS 2022)
 
-## Prerequisites:
+# Demo
+Coming soon.
+
+# How to Use
+
+# Prerequisites:
 torch: 1.5.0
 
 torchvision: 0.6.0
