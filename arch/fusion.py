@@ -5,6 +5,7 @@ from einops.layers.torch import Rearrange
 import torch.nn as nn
 import numpy as np
 from torch.nn.utils import weight_norm
+from thop import profile
 
 def pair(t):
     return t if isinstance(t, tuple) else (t, t)
@@ -89,8 +90,6 @@ class Transformer_freq(nn.Module):
         self.dropout = nn.Dropout(emb_dropout)
 
         self.transformer = Transformer(dim, depth, heads, dim_head, mlp_dim, dropout)
-        self.pool = pool
-        self.to_latent = nn.Identity()
 
         self.mlp_head = nn.Sequential(
             nn.LayerNorm(dim)
@@ -129,6 +128,9 @@ class CNN_spect(nn.Module):
         self.conv5 = nn.Conv2d(in_channels=64, out_channels=128, kernel_size=(3, 3), stride=1, padding=1, bias=True)
         self.dropout3 = torch.nn.Dropout(0.5)
         self.bn3 = nn.BatchNorm2d(128)
+        self.fc = nn.Sequential(
+            nn.Linear(64*6*13, 128),
+        )
 
     def forward(self, x):
         x = self.conv1(x)
@@ -146,17 +148,13 @@ class CNN_spect(nn.Module):
         x = self.dropout2(x)
         x = self.bn2(x)
         x = self.conv5(x)
-        x = self.relu(x)
         x = self.dropout3(x)
         x = self.bn3(x)
+        x = self.relu(x)
         x = x.view(x.size(0), x.size(1), -1)
         return x
 
 class FCNet(nn.Module):
-    """
-    Simple class for multi-layer non-linear fully connect network
-    Activate function: ReLU()
-    """
     def __init__(self, dims, dropout=0.0, norm=True):
         super(FCNet, self).__init__()
         self.num_layers = len(dims) -1
@@ -222,7 +220,6 @@ class Fusion_model(nn.Module):
         self.norm1 = nn.LayerNorm(256)
         self.cross_att1 = Attention_cross(v_dim=128, q_dim=128, hid_dim=256, glimpses=1)
         self.cross_att2 = Attention_cross(v_dim=128, q_dim=128, hid_dim=256, glimpses=1)
-        self.pooling1 = nn.AdaptiveAvgPool2d((1,1))
 
     def forward(self, freq, spect):
         feat_freq = self.model_freq(freq)
@@ -244,7 +241,12 @@ class Fusion_model(nn.Module):
 
 if __name__ == "__main__":
     model = Fusion_model(2)
-    spects = torch.rand(size=(8, 2, 33, 61))
-    x2 = torch.rand((8,9,30))
+    spects = torch.rand(size=(1, 2, 33, 61))
+    x2 = torch.rand((1,9,30))
     logits = model(x2, spects)
     print(logits.size())
+    print("number of model parameters:", sum([np.prod(p.size()) for p in model.parameters()]))
+    # from pthflops import count_ops
+    # count_ops(model, (x2, spects))
+    # macs, params = profile(model, inputs=(x2, spects,))
+    # print(macs, params)
