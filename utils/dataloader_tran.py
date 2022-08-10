@@ -1,11 +1,7 @@
 import pandas as pd
-from skimage import io, transform
 import numpy as np
 import torch
-from torch.utils.data import Dataset, DataLoader
-import sys
-from PIL import Image
-import random
+from torch.utils.data import Dataset
 
 class Intra_echo_datareader(Dataset):
     def __init__(self, csv_file, transform=None):
