@@ -1,5 +1,8 @@
 # Introduction
 Pytorch implementation of "Beyond the Pixel World: A Novel Acoustic-based Face Anti-Spoofing System for Smartphones". (TIFS 2022)
+<p align="center">
+ <img width="75%" src="./Figs/teaser3.png" />
+</p>
 
 # Demo
 Coming soon.
