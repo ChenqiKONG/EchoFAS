@@ -16,10 +16,10 @@ class Intra_echo_datareader(Dataset):
         np.seterr(divide='ignore',invalid='ignore')
         if torch.is_tensor(idx):
             idx = idx.tolist()
-        fft_path = self.data_path_details.iloc[idx, 0]
-        spect_path = fft_path.split('fft')[0] + 'spect' + fft_path.split('fft')[1]
+        #fft_path = self.data_path_details.iloc[idx, 0]
+        spect_path = self.data_path_details.iloc[idx, 1]
         spect = np.load(spect_path)
-        label = self.data_path_details.iloc[idx, 1]
+        label = self.data_path_details.iloc[idx, 2]
 
         samples = {'spects': spect,
                   'labels': label}
