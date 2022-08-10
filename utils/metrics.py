@@ -1,9 +1,6 @@
 import numpy as np
-import torch
-from scipy import interpolate
-from sklearn.metrics import roc_curve, roc_auc_score, auc
+from sklearn.metrics import roc_curve, auc
 from scipy.interpolate import interp1d
-from tqdm import tqdm
 from scipy.optimize import brentq
 
 def calculate_accuracy(threshold, dist, actual_issame):
