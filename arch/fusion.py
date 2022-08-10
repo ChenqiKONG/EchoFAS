@@ -1,11 +1,8 @@
 import torch
-from torch import nn
 from einops import rearrange, repeat
-from einops.layers.torch import Rearrange
 import torch.nn as nn
 import numpy as np
 from torch.nn.utils import weight_norm
-from thop import profile
 
 
 def pair(t):
