@@ -17,7 +17,7 @@ class Intra_echo_datareader(Dataset):
             idx = idx.tolist()
         fft_path = self.data_path_details.iloc[idx, 0]
         fft = np.load(fft_path)
-        label = self.data_path_details.iloc[idx, 1]
+        label = self.data_path_details.iloc[idx, 2]
 
         samples = {'ffts': fft,
                   'labels': label}
