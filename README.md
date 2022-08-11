@@ -27,10 +27,10 @@ Coming soon.
 |AVG|98.79|95.18|4.83|4.34|
 
 # Prerequisites:
-torch: 1.5.0  
-torchvision: 0.6.0  
-numpy: 1.23.0  
-pandas: 1.0.5
++ torch: 1.5.0  
++ torchvision: 0.6.0  
++ numpy: 1.23.0  
++ pandas: 1.0.5
 
 # Dataset
 Our dataset will be freely available (under a license agreement) upon acceptance.
