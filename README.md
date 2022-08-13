@@ -15,7 +15,11 @@ Coming soon.
 # Demo
 Coming soon.
 
-# How to Use
+# Usage
+1. Downloading Echo-Spoof database.  
+2. python train_fusion.py for reproducing the results. (change the training, validation, and test csv paths according to different phones.)  
+3. python test_fusion.py for inference and evaluation. (change the test csv paths accordingly.)  
+
 
 # FAS detection results for different smartphones
 |  Phone   | AUC(%) | ACC(%)| HTER(%) | EER(%) | 
