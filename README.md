@@ -3,11 +3,13 @@
 <p align="center">
  <img width="40%" src="./Figs/teaser3.png" />
 </p>
+Illustration of (a). the traditional RGB-based FAS system and (b). the proposed acoustic-based system.
 
 # Framework
 <p align="center">
  <img width="90%" src="./Figs/pipeline.png" />
 </p>
+Overview of the proposed two-branch Echo-FAS pipeline. The input signal is firstly fed forward to the Signal preprocessing module to extract nine signal segments. In the first branch, we apply Fast Fourier Transform (FFT) to obtain nine frequency signals, which are regarded as nine tokens and will be sent to the Transformer to obtain the global frequency feature. In the second branch, we further employ Short Time Fourier Transform (STFT) to obtain the corresponding spectrogram to the processed signal. The CNN is used to extract the local frequency feature of the input signals. The Cross Attention mechanisms model the correlation of the extracted global frequency feature $f_{1}$ and local frequency feature $f_{2}$. Subsequently, the attended features will be finally combined to determine whether the input query is a live person or a spoofer.
 
 # App
 Coming soon.
