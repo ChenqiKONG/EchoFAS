@@ -18,9 +18,9 @@ Coming soon.
 Coming soon.
 
 # Usage
-1. Downloading Echo-Spoof database.  
-2. python train_fusion.py for reproducing the results. (change the training, validation, and test csv paths according to different phones.)  
-3. python test_fusion.py for inference and evaluation. (change the test csv path and model path accordingly.)  
+1. Download Echo-Spoof database.  
+2. implement "python train_fusion.py" for reproducing the results. (change the training, validation, and test csv paths for different phones.)  
+3. implement "python test_fusion.py" for inference and evaluation. (change the test csv path and model path accordingly.)  
 
 
 # FAS detection results for different smartphones
