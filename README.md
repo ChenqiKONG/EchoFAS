@@ -42,3 +42,12 @@ Coming soon.
 Our dataset will be freely available (under a license agreement) upon acceptance.
 
 # Citation
+```
+@article{kong2022beyond,
+  title={Beyond the Pixel World: A Novel Acoustic-based Face Anti-Spoofing System for Smartphones},
+  author={Kong, Chenqi and Zheng, Kexin and Wang, Shiqi and Rocha, Anderson and Li, Haoliang},
+  journal={IEEE Transactions on Information Forensics and Security},
+  year={2022},
+  publisher={IEEE}
+}
+ ```
