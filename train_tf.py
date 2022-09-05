@@ -182,35 +182,35 @@ def train(args, model):
 
                 Avg_test_loss, AUC1, HTER1, EER1, ACC1 = Validation(model, test_dataloader1, args, args.thre, Num_test_ffts1)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'BAO_Yufan', AUC1, HTER1, EER1, ACC1)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id0', AUC1, HTER1, EER1, ACC1)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
 
                 Avg_test_loss, AUC2, HTER2, EER2, ACC2 = Validation(model, test_dataloader2, args, args.thre, Num_test_ffts2)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'LIU_Yibing', AUC2, HTER2, EER2, ACC2)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id1', AUC2, HTER2, EER2, ACC2)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
 
                 Avg_test_loss, AUC3, HTER3, EER3, ACC3 = Validation(model, test_dataloader3, args, args.thre, Num_test_ffts3)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'WANG_Qimeng', AUC3, HTER3, EER3, ACC3)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id2', AUC3, HTER3, EER3, ACC3)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
 
                 Avg_test_loss, AUC4, HTER4, EER4, ACC4 = Validation(model, test_dataloader4, args, args.thre, Num_test_ffts4)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'ZHANG_Yuanqi', AUC4, HTER4, EER4, ACC4)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id3', AUC4, HTER4, EER4, ACC4)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
 
                 Avg_test_loss, AUC5, HTER5, EER5, ACC5 = Validation(model, test_dataloader5, args, args.thre, Num_test_ffts5)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'ZOU_Jing', AUC5, HTER, EER5, ACC5)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id4', AUC5, HTER, EER5, ACC5)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
