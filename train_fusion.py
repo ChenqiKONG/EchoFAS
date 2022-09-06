@@ -32,7 +32,6 @@ def parse_args():
     parser.add_argument('--weight_decay', default=0.00001, type=float)
     parser.add_argument('--thre', default=0.5, type=float)
 
-    parser.add_argument('--device', default='cuda:0', type=str)
     parser.add_argument('--save_root', default='./Training_results/Cross/Cross_5id/fusion/', type=str)
     parser.add_argument('--root_path', default='./', type=str)
     
