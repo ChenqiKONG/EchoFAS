@@ -14,7 +14,7 @@ import  torch.nn.functional as F
 from utils.dataloader_tran import Intra_echo_datareader, my_transforms
 from utils.metrics import get_metrics
 
-device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 print('device: ', device)
 
 def parse_args():
