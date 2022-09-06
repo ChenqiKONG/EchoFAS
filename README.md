@@ -17,6 +17,9 @@ Coming soon.
 # Demo
 Coming soon.
 
+# Dataset
+If you would like to access the Celeb-DF dataset, please fill out this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSf6ZAw5MO2awdF-qzHFv_yv5vXsu76VyQ0I8Mr3DP7CoKghPw/viewform?usp=sf_link). The download link will be sent to you once the form is accepted. 
+
 # Usage
 1. Download Echo-Spoof database.  
 2. implement "python train_fusion.py" for reproducing the results. (change the training, validation, and test csv paths for different phones.)  
@@ -38,8 +41,6 @@ Coming soon.
 + numpy: 1.23.0  
 + pandas: 1.0.5
 
-# Dataset
-Our dataset will be freely available (under a license agreement) upon acceptance.
 
 # Citation
 ```
