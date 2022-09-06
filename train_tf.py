@@ -14,7 +14,7 @@ import  torch.nn.functional as F
 from utils.dataloader_tran import Intra_echo_datareader, my_transforms
 from utils.metrics import get_metrics
 
-device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
 print('device: ', device)
 
 def parse_args():
@@ -32,18 +32,17 @@ def parse_args():
     parser.add_argument('--weight_decay', default=0.00001, type=float)
     parser.add_argument('--thre', default=0.5, type=float)
 
-    parser.add_argument('--device', default='cuda:0', type=str)
     parser.add_argument('--save_root', default='./Training_results/Cross/Cross_5id/transformer10/', type=str)
     parser.add_argument('--root_path', default='./', type=str)
 
     parser.add_argument('--model_name', default="note", type=str)
-    parser.add_argument('--train_csv', default="./csv_files/Cross_5id/cross_5id_note_train.csv", type=str)
-    parser.add_argument('--val_csv', default="./csv_files/Cross_5id/cross_5id_note_val.csv", type=str)
-    parser.add_argument('--test_csv1', default="./csv_files/Cross_5id/cross_5id_id0_note_test.csv", type=str)
-    parser.add_argument('--test_csv2', default="./csv_files/Cross_5id/cross_5id_id1_note_test.csv", type=str)
-    parser.add_argument('--test_csv3', default="./csv_files/Cross_5id/cross_5id_id2_note_test.csv", type=str)
-    parser.add_argument('--test_csv4', default="./csv_files/Cross_5id/cross_5id_id3_note_test.csv", type=str)
-    parser.add_argument('--test_csv5', default="./csv_files/Cross_5id/cross_5id_id4_note_test.csv", type=str)
+    parser.add_argument('--train_csv', default="./csv_files/cross_5id/train/cross_5id_note_train.csv", type=str)
+    parser.add_argument('--val_csv', default="./csv_files/cross_5id/val/cross_5id_note_val.csv", type=str)
+    parser.add_argument('--test_csv1', default="./csv_files/cross_5id/test/cross_5id_id_25_note_test.csv", type=str)
+    parser.add_argument('--test_csv2', default="./csv_files/cross_5id/test/cross_5id_id_26_note_test.csv", type=str)
+    parser.add_argument('--test_csv3', default="./csv_files/cross_5id/test/cross_5id_id_27_note_test.csv", type=str)
+    parser.add_argument('--test_csv4', default="./csv_files/cross_5id/test/cross_5id_id_28_note_test.csv", type=str)
+    parser.add_argument('--test_csv5', default="./csv_files/cross_5id/test/cross_5id_id_29_note_test.csv", type=str)
     return parser.parse_args()
 
 def fix_seed(seed):
@@ -182,35 +181,35 @@ def train(args, model):
 
                 Avg_test_loss, AUC1, HTER1, EER1, ACC1 = Validation(model, test_dataloader1, args, args.thre, Num_test_ffts1)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id0', AUC1, HTER1, EER1, ACC1)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id_25', AUC1, HTER1, EER1, ACC1)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
 
                 Avg_test_loss, AUC2, HTER2, EER2, ACC2 = Validation(model, test_dataloader2, args, args.thre, Num_test_ffts2)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id1', AUC2, HTER2, EER2, ACC2)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id_26', AUC2, HTER2, EER2, ACC2)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
 
                 Avg_test_loss, AUC3, HTER3, EER3, ACC3 = Validation(model, test_dataloader3, args, args.thre, Num_test_ffts3)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id2', AUC3, HTER3, EER3, ACC3)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id_27', AUC3, HTER3, EER3, ACC3)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
 
                 Avg_test_loss, AUC4, HTER4, EER4, ACC4 = Validation(model, test_dataloader4, args, args.thre, Num_test_ffts4)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id3', AUC4, HTER4, EER4, ACC4)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id_28', AUC4, HTER4, EER4, ACC4)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
 
                 Avg_test_loss, AUC5, HTER5, EER5, ACC5 = Validation(model, test_dataloader5, args, args.thre, Num_test_ffts5)
                 test_msg = '[%s] Epoch: %d/%d | Global_step: %d | average testing loss: %f | id: %s | AUC: %f | HTER: %f | EER: %f | ACC: %f' % (
-                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id4', AUC5, HTER, EER5, ACC5)
+                                                                                        now_time, epoch + 1, args.epochs, Global_step, Avg_test_loss, 'id_29', AUC5, HTER, EER5, ACC5)
                 print('\n', test_msg)
                 f1.write(test_msg)
                 f1.write('\n')
