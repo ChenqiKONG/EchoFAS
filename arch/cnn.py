@@ -43,10 +43,10 @@ class CNN(nn.Module):
         x = self.dropout2(x)
         x = self.bn2(x)
         x = self.conv5(x)
-        x = self.relu(x)
         x = self.maxpool3(x)
         x = self.dropout3(x)
         x = self.bn3(x)
+        x = self.relu(x)
         x = x.view(x.size(0), -1)
         x = self.fc(x)
         return x
