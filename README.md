@@ -14,8 +14,8 @@ Overview of the proposed two-branch Echo-FAS pipeline. The input signal is first
 # App
 Coming soon.
 
-# Demo
-Coming soon.
+# Demo video
+https://youtu.be/OoE5qFgwA54
 
 # Dataset
 If you would like to access the Echo-Spoof dataset, please fill out this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSf6ZAw5MO2awdF-qzHFv_yv5vXsu76VyQ0I8Mr3DP7CoKghPw/viewform?usp=sf_link). The download link will be sent to you once the form is accepted. 
