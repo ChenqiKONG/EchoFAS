@@ -3,7 +3,7 @@
 <p align="center">
  <img width="40%" src="./Figs/teaser3.png" />
 </p>
-Illustration of M$^3$FAS system. The mobile device employs the front camera to capture the input RGB face photo. Meanwhile, the top speaker emits a customized acoustic signal, and the microphone collects the reflected signal modulated by the live/spoof face. The captured face picture and acoustic recording are sequentially fed forward to M$^3$FAS for final decision-making.
+Illustration of (a). the traditional RGB-based FAS system and (b). the proposed acoustic-based system.
 
 # Framework
 <p align="center">
